@@ -10,11 +10,7 @@ public:
 class SpecialQuackA:public IQuackBehaviour
 {
 public:
-	void quack() override{
-		printf("special quack a\n");
-	}
-
-private:
+	void quack() override;
 	
 };
 
@@ -22,22 +18,14 @@ private:
 class SpecialQuackB :public IQuackBehaviour
 {
 public:
-	void quack() override {
-		printf("special quack b\n");
-	}
-
-private:
+	void quack() override;
 
 };
 
 class SpecialQuackC :public IQuackBehaviour
 {
 public:
-	void quack() override {
-		printf("special quack c\n");
-	}
-
-private:
+	void quack() override;
 
 };
 
