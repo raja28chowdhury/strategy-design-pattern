@@ -5,11 +5,9 @@ class duck
 private:
 	IQuackBehaviour &quackBehaviour;
 public:
-	duck(IQuackBehaviour &quack_behaviour) :quackBehaviour(quack_behaviour){}
+	duck(IQuackBehaviour& quack_behaviour);
 
 
-	void quack_duck() {
-		quackBehaviour.quack();
-	}
+	void quack_duck();
 };
 
