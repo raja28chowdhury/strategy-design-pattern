@@ -30,3 +30,14 @@ private:
 
 };
 
+class SpecialQuackC :public IQuackBehaviour
+{
+public:
+	void quack() override {
+		printf("special quack c\n");
+	}
+
+private:
+
+};
+

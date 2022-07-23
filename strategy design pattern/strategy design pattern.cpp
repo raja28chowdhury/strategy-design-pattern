@@ -11,9 +11,20 @@ int main()
     
     IQuackBehaviour *me = new SpecialQuackA();
     me->quack();
-    IQuackBehaviour* me2 = new SpecialQuackB();
+    IQuackBehaviour *me2 = new SpecialQuackB();
     me2->quack();
-    
+    IQuackBehaviour *me3 = new SpecialQuackC();
+    me3->quack();
+
+    printf("-------------------------------------------------\n");
+    duck my_duckA(me);
+    my_duckA.quack_duck();
+
+    duck my_duckB(me2);
+    my_duckB.quack_duck();
+
+    duck my_duckC(me3);
+    my_duckC.quack_duck();
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
