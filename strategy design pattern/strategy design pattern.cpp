@@ -9,12 +9,12 @@ int main()
 {
     std::cout << "Hello World!\n";
     
-    IQuackBehaviour *me = new SpecialQuackA();
-    me->quack();
-    IQuackBehaviour *me2 = new SpecialQuackB();
-    me2->quack();
-    IQuackBehaviour *me3 = new SpecialQuackC();
-    me3->quack();
+    SpecialQuackA me;
+    me.quack();
+    SpecialQuackB me2;
+    me2.quack();
+    SpecialQuackC me3;
+    me3.quack();
 
     printf("-------------------------------------------------\n");
     duck my_duckA(me);
