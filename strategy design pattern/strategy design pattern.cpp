@@ -5,6 +5,8 @@
 #include "duck.h"
 #include "IQuackBehaviour.h"
 #include "IEatBehaviour.h"
+#include "IFlyBehaviour.h"
+
 
 int main()
 {
@@ -30,20 +32,33 @@ int main()
 
     printf("-------------------------------------------------\n");
 
-    duck my_duckA(quackA,eat_hand);
+    std::cout << "fly below !\n";
+
+    FlyWithJetPack fly_jet;
+    fly_jet.fly();
+    FlyWithWings fly_wings;
+    fly_wings.fly();
+
+
+    printf("-------------------------------------------------\n");
+
+
+    duck my_duckA(quackA,eat_hand,fly_jet);
     my_duckA.quack_duck();
     my_duckA.eat_duck();
-
+    my_duckA.fly_duck();
     printf("-------------------------------------------------\n");
 
-    duck my_duckB(quackB,eat_mouth);
+    duck my_duckB(quackB,eat_mouth,fly_jet);
     my_duckB.quack_duck();
     my_duckB.eat_duck();
+    my_duckB.fly_duck();
     printf("-------------------------------------------------\n");
 
-    duck my_duckC(quackC,eat_disable);
+    duck my_duckC(quackC,eat_disable,fly_wings);
     my_duckC.quack_duck();
     my_duckC.eat_duck();
+    my_duckC.fly_duck();
     printf("-------------------------------------------------\n");
 }
 
