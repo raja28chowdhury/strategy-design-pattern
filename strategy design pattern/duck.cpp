@@ -5,6 +5,6 @@ void duck::quack_duck() {
 	quackBehaviour->quack();
 }
 
-duck::duck(IQuackBehaviour* quack_behaviour) {
+duck::duck(std::shared_ptr<IQuackBehaviour> quack_behaviour) {
 	quackBehaviour = quack_behaviour;
 }
