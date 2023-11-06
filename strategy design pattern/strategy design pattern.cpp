@@ -9,11 +9,15 @@ int main()
 {
     std::cout << "Hello World!\n";
     
-    IQuackBehaviour *me = new SpecialQuackA();
+    std::shared_ptr<IQuackBehaviour> me= std::make_shared<SpecialQuackA>();
+
+    //IQuackBehaviour *me = new SpecialQuackA();
     me->quack();
-    IQuackBehaviour *me2 = new SpecialQuackB();
+   //IQuackBehaviour *me2 = new SpecialQuackB();
+    std::shared_ptr<IQuackBehaviour> me2 = std::make_shared<SpecialQuackB>();
     me2->quack();
-    IQuackBehaviour *me3 = new SpecialQuackC();
+    //IQuackBehaviour *me3 = new SpecialQuackC();
+    std::shared_ptr<IQuackBehaviour> me3 = std::make_shared<SpecialQuackC>();
     me3->quack();
 
     printf("-------------------------------------------------\n");
