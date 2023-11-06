@@ -4,31 +4,42 @@
 #include <iostream>
 #include "duck.h"
 #include "IQuackBehaviour.h"
+#include "IFlyBehaviour.h"
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    std::cout << "print quack behaviour!\n";
     
-    std::shared_ptr<IQuackBehaviour> me= std::make_shared<SpecialQuackA>();
+    std::shared_ptr<IQuackBehaviour> quack_a= std::make_shared<SpecialQuackA>();
+    quack_a->quack();
+    std::shared_ptr<IQuackBehaviour> quack_b = std::make_shared<SpecialQuackB>();
+    quack_b->quack();
+    std::shared_ptr<IQuackBehaviour> quack_c = std::make_shared<SpecialQuackC>();
+    quack_c->quack();
+    printf("\n\n print fly behaviour \n");
 
-    //IQuackBehaviour *me = new SpecialQuackA();
-    me->quack();
-   //IQuackBehaviour *me2 = new SpecialQuackB();
-    std::shared_ptr<IQuackBehaviour> me2 = std::make_shared<SpecialQuackB>();
-    me2->quack();
-    //IQuackBehaviour *me3 = new SpecialQuackC();
-    std::shared_ptr<IQuackBehaviour> me3 = std::make_shared<SpecialQuackC>();
-    me3->quack();
+    std::shared_ptr<IFlyBehaviour> fly_a = std::make_shared<highSpeedFly>();
+    fly_a->fly();
+    std::shared_ptr<IFlyBehaviour> fly_b = std::make_shared<lowSpeedFly>();
+    fly_b->fly();
+    std::shared_ptr<IFlyBehaviour> fly_c = std::make_shared<noFly>();
+    fly_c->fly();
 
     printf("-------------------------------------------------\n");
-    duck my_duckA(me);
+
+    printf("print functionality\n");
+
+    duck my_duckA(quack_a,fly_a);
     my_duckA.quack_duck();
+    my_duckA.fly_duck();
 
-    duck my_duckB(me2);
+    duck my_duckB(quack_b,fly_b);
     my_duckB.quack_duck();
+    my_duckB.fly_duck();
 
-    duck my_duckC(me3);
+    duck my_duckC(quack_c,fly_c);
     my_duckC.quack_duck();
+    my_duckC.fly_duck();
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
